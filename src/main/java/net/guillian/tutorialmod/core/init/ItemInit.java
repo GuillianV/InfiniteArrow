@@ -2,9 +2,11 @@ package net.guillian.tutorialmod.core.init;
 
 import net.guillian.tutorialmod.Tutorialmod;
 import net.guillian.tutorialmod.common.items.ArrowItemDigger;
+import net.guillian.tutorialmod.common.items.ArrowItemTnt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.Explosion;
 import net.minecraftforge.fmllegacy.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -24,7 +26,10 @@ public final class ItemInit {
     public static  final RegistryObject<BlockItem> MYITEMBLOCK = ITEMS.register("myitemblock",() -> new BlockItem(BlockInit.MYBLOCK.get(), new Item.Properties().tab(CreativeModeTab.TAB_MISC).fireResistant().stacksTo(4)));
 
     //ArrowItems
-    public static  final RegistryObject<Item> ARROW_DIGGER_SIMPLE = ITEMS.register("arrow_digger_simple",() -> new ArrowItemDigger(new Item.Properties().tab(CreativeModeTab.TAB_MISC),1.5f,2,1,true));
+    public static  final RegistryObject<Item> ARROW_DIGGER_SIMPLE = ITEMS.register("arrow_digger_simple",() -> new ArrowItemDigger(new Item.Properties().tab(CreativeModeTab.TAB_MISC),1.5f,1,1,false));
+    public static  final RegistryObject<Item> ARROW_DIGGER_MEDIUM = ITEMS.register("arrow_digger_medium",() -> new ArrowItemDigger(new Item.Properties().tab(CreativeModeTab.TAB_MISC),2.5f,2,1,false));
+    public static  final RegistryObject<Item> ARROW_DIGGER_ADVANCED = ITEMS.register("arrow_digger_advanced",() -> new ArrowItemDigger(new Item.Properties().tab(CreativeModeTab.TAB_MISC),3.5f,3,2,false));
 
+    public static  final RegistryObject<Item> ARROW_TNT_SIMPLE = ITEMS.register("arrow_tnt_simple",() -> new ArrowItemTnt(new Item.Properties().tab(CreativeModeTab.TAB_MISC),3.5f,3, Explosion.BlockInteraction.DESTROY,120));
 
 }

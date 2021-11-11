@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "gg",
+    "ag"
+  ],
+  "key": {
+    "g": {
+      "item": "minecraft:gunpowder"
+    },
+    "a": {
+      "item": "minecraft:arrow"
+    }
+  },
+  "result": {
+    "item": "tutorialmod:arrow_tnt_simple"
+  }
+}

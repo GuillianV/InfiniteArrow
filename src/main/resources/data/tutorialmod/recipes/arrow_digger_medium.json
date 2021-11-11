@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  r",
+    " a ",
+    "c  "
+  ],
+  "key": {
+    "r": {
+      "item": "minecraft:redstone"
+    },
+    "a": {
+      "item": "tutorialmod:arrow_digger_simple"
+    },
+    "c": {
+      "item": "minecraft:coal"
+    }
+  },
+  "result": {
+    "item": "tutorialmod:arrow_digger_medium"
+  }
+}

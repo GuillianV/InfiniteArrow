@@ -7,12 +7,15 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MoverType;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
@@ -24,8 +27,8 @@ import net.minecraftforge.fml.common.Mod;
 public class ArrowDigger extends AbstractArrow {
 
     private final Item referenceItem;
-    private int rows = 1;
-    private int radius = 2;
+    private int rows;
+    private int radius;
     private boolean isLooting = false;
 
     public ArrowDigger(EntityType<? extends ArrowDigger> entityType, Level level) {
@@ -39,6 +42,12 @@ public class ArrowDigger extends AbstractArrow {
         super(EntityInit.ARROW_DIGGER.get(),shooter, level);
         this.referenceItem = referenceItem;
 
+
+    }
+
+    @Override
+    public void setDeltaMovement(Vec3 deltaMovement) {
+        super.setDeltaMovement(deltaMovement);
 
     }
 
@@ -57,7 +66,7 @@ public class ArrowDigger extends AbstractArrow {
 
 
 
-
+/*
     @Override
     public void move(MoverType moverType, Vec3 vec3) {
         super.move(moverType, vec3);
@@ -76,8 +85,8 @@ public class ArrowDigger extends AbstractArrow {
         Vec3 vec3 = this.getDeltaMovement();
         this.setDeltaMovement(vec3.multiply((double)(this.random.nextFloat() * 0.2F), (double)(this.random.nextFloat() * 0.2F), (double)(this.random.nextFloat() * 0.2F)));
     }
+*/
 
-    @SubscribeEvent
     public boolean DestroyBlock(BlockPos pos){
 
         if (this.isLooting){
@@ -90,9 +99,10 @@ public class ArrowDigger extends AbstractArrow {
     }
 
 
+
+
     @Override
     public void tick() {
-
 
 
         super.tick();
@@ -112,15 +122,23 @@ public class ArrowDigger extends AbstractArrow {
 
                 //  this.getOwner().sendMessage(new TextComponent("My arrow Hitted"),this.getUUID());
 
-                for (int x = -this.radius / 2; x < this.radius / 2; x++) {
-                    for (int y = -this.radius / 2; y < this.radius / 2; y++) {
-                        for (int z = -this.radius / 2; z < this.radius / 2; z++) {
+                for (int x = -this.radius ; x <= this.radius ; x++) {
+                    for (int y = -this.radius ; y <= this.radius ; y++) {
+                        for (int z = -this.radius ; z <= this.radius ; z++) {
 
-                            BlockPos pos = new BlockPos(this.getX() + x, this.getY() + y, this.getZ() + z);
-                            if (this.level.getBlockState(pos).getBlock() != Blocks.AIR && rows > 0) {
-                                DestroyBlock(pos);
-                                tickDestroyedBlock= true;
+                            BlockPos pos = new BlockPos(hitresult.getLocation().x + x, hitresult.getLocation().y+ y, hitresult.getLocation().z+ z);
+
+                            boolean destroyed = false;
+                            if ( level.getBlockState(pos).getBlock() == Blocks.BEDROCK){
+                                rows = 0;
+                            }else {
+                                destroyed =  DestroyBlock(pos);
                             }
+
+
+                            if (destroyed)
+                                tickDestroyedBlock= true;
+
                         }
                     }
                 }
@@ -139,41 +157,10 @@ public class ArrowDigger extends AbstractArrow {
 
         }
 
-
-        if (this.inGround){
-            //float f = 100.0F;
-          //  this.remove(RemovalReason.KILLED);
-            //this.level.explode(this, this.getX(), this.getY(), this.getZ(), 3 * f, Explosion.BlockInteraction.DESTROY );
-
-        }
     }
 
 
 
-
-
-
-     /*   HitResult hitresult = this.level.clip(new ClipContext( new Vec3(this.getX() , this.getY() ,this.getZ()) , new Vec3(this.getX() + this.getLookAngle().x  , this.getY()+ this.getLookAngle().y,this.getZ() +this.getLookAngle().z ), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, this));
-        if (hitresult.getType() != HitResult.Type.BLOCK && rows > 0) {
-
-            BlockPos blockPos = new BlockPos(hitresult.getLocation());
-            if (level.getBlockState(  blockPos).getBlock() != Blocks.AIR && rows > 0)
-            {
-
-                int radius = 4;
-                for (int x = -radius/2 ;x < radius/2 ; x++){
-                    for (int y = -radius/2;y < radius/2 ; y++){
-                        for (int z = -radius/2;z < radius/2 ; z++){
-                            this.level.removeBlock(new BlockPos(this.getX() + x, this.getY()+y,this.getZ()+z),true);
-                            //rows--;
-                        }
-                    }
-                }
-
-
-            }
-        }
-*/
 
 
 

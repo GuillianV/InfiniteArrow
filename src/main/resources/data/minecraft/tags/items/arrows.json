@@ -1,6 +1,10 @@
 {
   "replace": false,
   "values": [
-    "tutorialmod:arrow_digger_simple"
+    "tutorialmod:arrow_digger_simple",
+    "tutorialmod:arrow_digger_medium",
+    "tutorialmod:arrow_digger_advanced",
+
+    "tutorialmod:arrow_tnt_simple"
   ]
 }

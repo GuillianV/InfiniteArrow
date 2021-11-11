@@ -2,8 +2,10 @@ package net.guillian.tutorialmod.client.event;
 
 import net.guillian.tutorialmod.Tutorialmod;
 import net.guillian.tutorialmod.client.renderer.ArrowDiggerRenderer;
+import net.guillian.tutorialmod.client.renderer.ArrowTntRenderer;
 import net.guillian.tutorialmod.client.renderer.MyEntityRenderer;
 import net.guillian.tutorialmod.client.renderer.model.MyEntityModel;
+import net.guillian.tutorialmod.common.entity.ArrowTnt;
 import net.guillian.tutorialmod.common.entity.MyEntity;
 import net.guillian.tutorialmod.core.init.EntityInit;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -29,6 +31,7 @@ public class ClientModEvents {
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event){
         event.registerEntityRenderer(EntityInit.MYENTITY.get(), MyEntityRenderer::new);
         event.registerEntityRenderer(EntityInit.ARROW_DIGGER.get(), ArrowDiggerRenderer::new);
+        event.registerEntityRenderer(EntityInit.ARROW_TNT.get(), ArrowTntRenderer::new);
     }
 
 }

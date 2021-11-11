@@ -1,12 +1,15 @@
 {
   "item.tutorialmod.myitem": "My Item",
   "item.tutorialmod.myitem2": "My Item 2",
-  "item.tutorialmod.itemarrowtnt": "My arrow item",
   "item.tutorialmod.arrow_digger_simple": "Simple Arrow digger",
+  "item.tutorialmod.arrow_digger_medium": "Medium Arrow digger",
+  "item.tutorialmod.arrow_digger_advanced": "Advanced Arrow digger",
+  "item.tutorialmod.arrow_tnt_simple": "Simple Arrow tnt",
+
 
   "block.tutorialmod.myblock": "myblock",
 
   "entity.tutorialmod.myentity": "My entity",
-  "entity.tutorialmod.entityarrowtnt": "My arrow tnt",
-  "entity.tutorialmod.arrow_digger": "Digging Arrow"
+  "entity.tutorialmod.arrow_digger": "Digging Arrow",
+  "entity.tutorialmod.arrow_tnt": "Tnt Arrow"
 }

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " rr",
+    "car",
+    "cc "
+  ],
+  "key": {
+    "r": {
+      "item": "minecraft:redstone"
+    },
+    "a": {
+      "item": "tutorialmod:arrow_digger_medium"
+    },
+    "c": {
+      "item": "minecraft:coal"
+    }
+  },
+  "result": {
+    "item": "tutorialmod:arrow_digger_advanced"
+  }
+}

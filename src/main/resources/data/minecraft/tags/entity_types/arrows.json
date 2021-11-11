@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "tutorialmod:arrow_digger"
+    "tutorialmod:arrow_digger",
+    "tutorialmod:arrow_tnt"
   ]
 }
