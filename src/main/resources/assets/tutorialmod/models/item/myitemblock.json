@@ -1,0 +1,6 @@
+{
+  "parent": "tutorialmod:block/myblock",
+  "textures": {
+    "layer0": "tutorialmod:items/myblock"
+  }
+}

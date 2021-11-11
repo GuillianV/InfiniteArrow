@@ -1,0 +1,28 @@
+package net.guillian.tutorialmod.client.renderer;
+
+import net.guillian.tutorialmod.Tutorialmod;
+import net.guillian.tutorialmod.common.entity.ArrowDigger;
+import net.minecraft.client.renderer.entity.ArrowRenderer;
+import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+
+@OnlyIn(Dist.CLIENT)
+public class ArrowDiggerRenderer extends ArrowRenderer<ArrowDigger> {
+
+    private static final ResourceLocation TEXTURE = new ResourceLocation(Tutorialmod.MOD_ID,"textures/entities/projectiles/arrow_digger.png");
+
+
+
+    public ArrowDiggerRenderer(EntityRendererProvider.Context context) {
+        super(context);
+    }
+
+    @Override
+    public ResourceLocation getTextureLocation(ArrowDigger arrowDigger) {
+        return TEXTURE;
+    }
+
+
+}
