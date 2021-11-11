@@ -24,22 +24,37 @@ import net.minecraftforge.fml.common.Mod;
 public class ArrowDigger extends AbstractArrow {
 
     private final Item referenceItem;
-    private int rows;
-    private int radius;
+    private int rows = 1;
+    private int radius = 2;
+    private boolean isLooting = false;
 
     public ArrowDigger(EntityType<? extends ArrowDigger> entityType, Level level) {
         super(entityType, level);
         this.referenceItem = ItemInit.ARROW_DIGGER_SIMPLE.get();
-        this.rows = 3;
-        this.radius = 4;
+
     }
 
-    public ArrowDigger(LivingEntity shooter, Level level, Item referenceItem, int rows, int radius) {
+    public ArrowDigger(LivingEntity shooter, Level level, Item referenceItem) {
         super(EntityInit.ARROW_DIGGER.get(),shooter, level);
         this.referenceItem = referenceItem;
+
+
+    }
+
+    public void setRows(int rows){
         this.rows = rows;
+    }
+
+    public void setRadius(int radius){
         this.radius = radius;
     }
+
+    public void setLooting(boolean isLooting){
+        this.isLooting = isLooting;
+    }
+
+
+
 
     @Override
     public void move(MoverType moverType, Vec3 vec3) {
@@ -60,11 +75,24 @@ public class ArrowDigger extends AbstractArrow {
         this.setDeltaMovement(vec3.multiply((double)(this.random.nextFloat() * 0.2F), (double)(this.random.nextFloat() * 0.2F), (double)(this.random.nextFloat() * 0.2F)));
     }
 
-
-
     @SubscribeEvent
+    public boolean DestroyBlock(BlockPos pos){
+
+        if (this.isLooting){
+            return level.destroyBlock(pos, true,this);
+        }else {
+            return level.removeBlock(pos, false);
+        }
+
+
+    }
+
+
     @Override
     public void tick() {
+
+
+
         super.tick();
 
         boolean tickDestroyedBlock = false;
@@ -77,38 +105,46 @@ public class ArrowDigger extends AbstractArrow {
         BlockHitResult hitresult = this.level.clip(new ClipContext(position, newPosition, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, this));
         if (hitresult.getType() != HitResult.Type.MISS ) {
             newPosition = hitresult.getLocation();
-            if (this.level.getBlockState( hitresult.getBlockPos()).getBlock() != Blocks.AIR && rows > 0)
-            {
+            if (rows > 0) {
+
+
                 //  this.getOwner().sendMessage(new TextComponent("My arrow Hitted"),this.getUUID());
 
-                for (int x = -this.radius/2 ;x < this.radius/2 ; x++){
-                    for (int y = -this.radius/2;y < this.radius/2 ; y++){
-                        for (int z = -this.radius/2;z < this.radius/2 ; z++){
+                for (int x = -this.radius / 2; x < this.radius / 2; x++) {
+                    for (int y = -this.radius / 2; y < this.radius / 2; y++) {
+                        for (int z = -this.radius / 2; z < this.radius / 2; z++) {
 
-                         /*   this.getServer().getAllLevels().forEach(level ->{
-                                if (this.level == level){
-
-                                }
-                            });*/
-
-                            level.removeBlock(new BlockPos(this.getX() + x, this.getY()+y,this.getZ()+z),true);
-
-                          /*  boolean destroyed = this.level.destroyBlock(new BlockPos(this.getX() + x, this.getY()+y,this.getZ()+z),true,this,512);
-                            if (destroyed){
-                                tickDestroyedBlock = true;
-                            }*/
-
+                            BlockPos pos = new BlockPos(this.getX() + x, this.getY() + y, this.getZ() + z);
+                            if (this.level.getBlockState(pos).getBlock() != Blocks.AIR && rows > 0) {
+                                DestroyBlock(pos);
+                                tickDestroyedBlock= true;
+                            }
                         }
                     }
                 }
                 if (tickDestroyedBlock){
-                    this.rows--;
+                    rows--;
                 }
 
+
+            }else {
+                this.remove(RemovalReason.KILLED);
             }
 
 
+
+
+
         }
+
+
+        if (this.inGround){
+            //float f = 100.0F;
+          //  this.remove(RemovalReason.KILLED);
+            //this.level.explode(this, this.getX(), this.getY(), this.getZ(), 3 * f, Explosion.BlockInteraction.DESTROY );
+
+        }
+    }
 
 
 
@@ -140,15 +176,7 @@ public class ArrowDigger extends AbstractArrow {
 
 
 
-        if (this.inGround){
-            //float f = 100.0F;
 
-            //this.level.explode(this, this.getX(), this.getY(), this.getZ(), 3 * f, Explosion.BlockInteraction.DESTROY );
-             this.remove(RemovalReason.KILLED);
-        }
-
-
-    }
 
     @Override
     public ItemStack getPickupItem() {

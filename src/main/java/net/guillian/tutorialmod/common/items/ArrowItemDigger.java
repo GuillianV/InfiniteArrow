@@ -13,22 +13,19 @@ public class ArrowItemDigger extends ArrowItem {
     public final float damage;
     public final int radius;
     public final int rows;
+    public final boolean isLooting;
 
 
-    public ArrowItemDigger(Properties properties) {
 
-        super(properties);
-        this.damage = 1.5f;
-        this.rows=1;
-        this.radius=2;
-    }
 
-    public ArrowItemDigger(Properties properties,float damage,int radius, int rows) {
+    public ArrowItemDigger(Properties properties,float damage,int radius, int rows,boolean isLooting) {
 
         super(properties);
         this.damage = damage;
         this.rows=rows;
         this.radius=radius;
+        this.isLooting = isLooting;
+
     }
 
 
@@ -36,8 +33,11 @@ public class ArrowItemDigger extends ArrowItem {
 
     @Override
     public AbstractArrow createArrow(Level level, ItemStack stack, LivingEntity shooter) {
-        ArrowDigger arrow = new ArrowDigger(shooter,level, ItemInit.ARROW_DIGGER_SIMPLE.get(),this.rows,this.radius);
+        ArrowDigger arrow = new ArrowDigger(shooter,level, ItemInit.ARROW_DIGGER_SIMPLE.get());
         arrow.setBaseDamage(this.damage);
+        arrow.setRadius(this.radius);
+        arrow.setRows(this.rows);
+        arrow.setLooting(this.isLooting);
         return arrow;
     }
 

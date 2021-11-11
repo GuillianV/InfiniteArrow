@@ -24,7 +24,7 @@ public final class ItemInit {
     public static  final RegistryObject<BlockItem> MYITEMBLOCK = ITEMS.register("myitemblock",() -> new BlockItem(BlockInit.MYBLOCK.get(), new Item.Properties().tab(CreativeModeTab.TAB_MISC).fireResistant().stacksTo(4)));
 
     //ArrowItems
-    public static  final RegistryObject<Item> ARROW_DIGGER_SIMPLE = ITEMS.register("arrow_digger_simple",() -> new ArrowItemDigger(new Item.Properties().tab(CreativeModeTab.TAB_MISC),1.5f,2,1));
+    public static  final RegistryObject<Item> ARROW_DIGGER_SIMPLE = ITEMS.register("arrow_digger_simple",() -> new ArrowItemDigger(new Item.Properties().tab(CreativeModeTab.TAB_MISC),1.5f,2,1,true));
 
 
 }

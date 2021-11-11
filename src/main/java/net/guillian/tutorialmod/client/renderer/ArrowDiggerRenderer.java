@@ -8,7 +8,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-@OnlyIn(Dist.CLIENT)
 public class ArrowDiggerRenderer extends ArrowRenderer<ArrowDigger> {
 
     private static final ResourceLocation TEXTURE = new ResourceLocation(Tutorialmod.MOD_ID,"textures/entities/projectiles/arrow_digger.png");
