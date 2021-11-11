@@ -34,6 +34,7 @@ public class ArrowDigger extends AbstractArrow {
 
     }
 
+
     public ArrowDigger(LivingEntity shooter, Level level, Item referenceItem) {
         super(EntityInit.ARROW_DIGGER.get(),shooter, level);
         this.referenceItem = referenceItem;
@@ -52,6 +53,7 @@ public class ArrowDigger extends AbstractArrow {
     public void setLooting(boolean isLooting){
         this.isLooting = isLooting;
     }
+
 
 
 
