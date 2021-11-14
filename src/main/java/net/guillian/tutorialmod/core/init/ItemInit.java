@@ -30,6 +30,8 @@ public final class ItemInit {
     public static  final RegistryObject<Item> ARROW_DIGGER_MEDIUM = ITEMS.register("arrow_digger_medium",() -> new ArrowItemDigger(new Item.Properties().tab(CreativeModeTab.TAB_MISC),2.5f,2,1,false));
     public static  final RegistryObject<Item> ARROW_DIGGER_ADVANCED = ITEMS.register("arrow_digger_advanced",() -> new ArrowItemDigger(new Item.Properties().tab(CreativeModeTab.TAB_MISC),3.5f,3,2,false));
 
-    public static  final RegistryObject<Item> ARROW_TNT_SIMPLE = ITEMS.register("arrow_tnt_simple",() -> new ArrowItemTnt(new Item.Properties().tab(CreativeModeTab.TAB_MISC),3.5f,3, Explosion.BlockInteraction.DESTROY,120));
+    public static  final RegistryObject<Item> ARROW_TNT_SIMPLE = ITEMS.register("arrow_tnt_simple",() -> new ArrowItemTnt(new Item.Properties().tab(CreativeModeTab.TAB_MISC),0.5f,1, Explosion.BlockInteraction.DESTROY,120));
+    public static  final RegistryObject<Item> ARROW_TNT_MEDIUM = ITEMS.register("arrow_tnt_medium",() -> new ArrowItemTnt(new Item.Properties().tab(CreativeModeTab.TAB_MISC),1.5f,2, Explosion.BlockInteraction.DESTROY,100));
+    public static  final RegistryObject<Item> ARROW_TNT_ADVANCED = ITEMS.register("arrow_tnt_advanced",() -> new ArrowItemTnt(new Item.Properties().tab(CreativeModeTab.TAB_MISC),2.5f,3, Explosion.BlockInteraction.DESTROY,80));
 
 }

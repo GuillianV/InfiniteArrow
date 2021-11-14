@@ -1,12 +1,12 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "gg",
-    "ag"
+    "tt",
+    "at"
   ],
   "key": {
-    "g": {
-      "item": "minecraft:gunpowder"
+    "t": {
+      "item": "minecraft:tnt"
     },
     "a": {
       "item": "minecraft:arrow"

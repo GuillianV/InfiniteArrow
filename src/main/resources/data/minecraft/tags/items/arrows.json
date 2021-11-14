@@ -5,6 +5,8 @@
     "tutorialmod:arrow_digger_medium",
     "tutorialmod:arrow_digger_advanced",
 
-    "tutorialmod:arrow_tnt_simple"
+    "tutorialmod:arrow_tnt_simple",
+    "tutorialmod:arrow_tnt_medium",
+    "tutorialmod:arrow_tnt_advanced"
   ]
 }
