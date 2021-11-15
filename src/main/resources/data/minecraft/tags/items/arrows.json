@@ -7,6 +7,10 @@
 
     "tutorialmod:arrow_tnt_simple",
     "tutorialmod:arrow_tnt_medium",
-    "tutorialmod:arrow_tnt_advanced"
+    "tutorialmod:arrow_tnt_advanced",
+
+    "tutorialmod:arrow_poison_area_simple",
+    "tutorialmod:arrow_poison_area_medium",
+    "tutorialmod:arrow_poison_area_advanced"
   ]
 }

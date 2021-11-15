@@ -2,6 +2,7 @@ package net.guillian.tutorialmod.core.init;
 
 import net.guillian.tutorialmod.Tutorialmod;
 import net.guillian.tutorialmod.common.entity.ArrowDigger;
+import net.guillian.tutorialmod.common.entity.ArrowPoisonArea;
 import net.guillian.tutorialmod.common.entity.ArrowTnt;
 import net.guillian.tutorialmod.common.entity.MyEntity;
 import net.minecraft.resources.ResourceLocation;
@@ -28,5 +29,6 @@ public final class EntityInit {
     //Arrows
     public static  final RegistryObject<EntityType<ArrowDigger>> ARROW_DIGGER = ENTITIES.register("arrow_digger",()-> EntityType.Builder.<ArrowDigger>of(ArrowDigger::new,MobCategory.MISC).sized(0.5f,0.5f).clientTrackingRange(4).updateInterval(20).build(new ResourceLocation(Tutorialmod.MOD_ID,"arrow_digger").toString()));
     public static  final RegistryObject<EntityType<ArrowTnt>> ARROW_TNT = ENTITIES.register("arrow_tnt",()-> EntityType.Builder.<ArrowTnt>of(ArrowTnt::new,MobCategory.MISC).sized(0.5f,0.5f).clientTrackingRange(4).updateInterval(20).build(new ResourceLocation(Tutorialmod.MOD_ID,"arrow_tnt").toString()));
+    public static  final RegistryObject<EntityType<ArrowPoisonArea>> ARROW_POISON_AREA = ENTITIES.register("arrow_poison_area",()-> EntityType.Builder.<ArrowPoisonArea>of(ArrowPoisonArea::new,MobCategory.MISC).sized(0.5f,0.5f).clientTrackingRange(4).updateInterval(20).build(new ResourceLocation(Tutorialmod.MOD_ID,"arrow_poison_area").toString()));
 
 }

@@ -2,6 +2,7 @@ package net.guillian.tutorialmod.core.init;
 
 import net.guillian.tutorialmod.Tutorialmod;
 import net.guillian.tutorialmod.common.items.ArrowItemDigger;
+import net.guillian.tutorialmod.common.items.ArrowItemPoisonArea;
 import net.guillian.tutorialmod.common.items.ArrowItemTnt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -33,5 +34,11 @@ public final class ItemInit {
     public static  final RegistryObject<Item> ARROW_TNT_SIMPLE = ITEMS.register("arrow_tnt_simple",() -> new ArrowItemTnt(new Item.Properties().tab(CreativeModeTab.TAB_MISC),0.5f,1, Explosion.BlockInteraction.DESTROY,120));
     public static  final RegistryObject<Item> ARROW_TNT_MEDIUM = ITEMS.register("arrow_tnt_medium",() -> new ArrowItemTnt(new Item.Properties().tab(CreativeModeTab.TAB_MISC),1.5f,2, Explosion.BlockInteraction.DESTROY,100));
     public static  final RegistryObject<Item> ARROW_TNT_ADVANCED = ITEMS.register("arrow_tnt_advanced",() -> new ArrowItemTnt(new Item.Properties().tab(CreativeModeTab.TAB_MISC),2.5f,3, Explosion.BlockInteraction.DESTROY,80));
+
+    public static  final RegistryObject<Item> ARROW_POISON_AREA_SIMPLE = ITEMS.register("arrow_poison_area_simple",() -> new ArrowItemPoisonArea(new Item.Properties().tab(CreativeModeTab.TAB_MISC),3));
+    public static  final RegistryObject<Item> ARROW_POISON_AREA_MEDIUM = ITEMS.register("arrow_poison_area_medium",() -> new ArrowItemPoisonArea(new Item.Properties().tab(CreativeModeTab.TAB_MISC),3));
+    public static  final RegistryObject<Item> ARROW_POISON_AREA_ADVANCED = ITEMS.register("arrow_poison_area_advanced",() -> new ArrowItemPoisonArea(new Item.Properties().tab(CreativeModeTab.TAB_MISC),3));
+
+
 
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "tutorialmod:items/arrows/poison/arrow_poison_area_simple"
+  }
+}

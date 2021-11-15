@@ -7,11 +7,15 @@
   "item.tutorialmod.arrow_tnt_simple": "Simple Arrow tnt",
   "item.tutorialmod.arrow_tnt_medium": "Medium Arrow tnt",
   "item.tutorialmod.arrow_tnt_advanced": "Advanced Arrow tnt",
+  "item.tutorialmod.arrow_poison_area_simple": "Simple Poison Arrow",
+  "item.tutorialmod.arrow_poison_area_medium": "Medium Poison Arrow",
+  "item.tutorialmod.arrow_poison_area_advanced": "Advanced Poison Arrow",
 
 
   "block.tutorialmod.myblock": "myblock",
 
   "entity.tutorialmod.myentity": "My entity",
   "entity.tutorialmod.arrow_digger": "Digging Arrow",
-  "entity.tutorialmod.arrow_tnt": "Tnt Arrow"
+  "entity.tutorialmod.arrow_tnt": "Tnt Arrow",
+  "entity.tutorialmod.arrow_poison_area": "Poisonous Arrow"
 }
