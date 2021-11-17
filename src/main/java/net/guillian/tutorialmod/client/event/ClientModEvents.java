@@ -1,10 +1,7 @@
 package net.guillian.tutorialmod.client.event;
 
 import net.guillian.tutorialmod.Tutorialmod;
-import net.guillian.tutorialmod.client.renderer.ArrowDiggerRenderer;
-import net.guillian.tutorialmod.client.renderer.ArrowPoisonAreaRenderer;
-import net.guillian.tutorialmod.client.renderer.ArrowTntRenderer;
-import net.guillian.tutorialmod.client.renderer.MyEntityRenderer;
+import net.guillian.tutorialmod.client.renderer.*;
 import net.guillian.tutorialmod.client.renderer.model.MyEntityModel;
 import net.guillian.tutorialmod.common.entity.ArrowPoisonArea;
 import net.guillian.tutorialmod.common.entity.ArrowTnt;
@@ -35,6 +32,7 @@ public class ClientModEvents {
         event.registerEntityRenderer(EntityInit.ARROW_DIGGER.get(), ArrowDiggerRenderer::new);
         event.registerEntityRenderer(EntityInit.ARROW_TNT.get(), ArrowTntRenderer::new);
         event.registerEntityRenderer(EntityInit.ARROW_POISON_AREA.get(), ArrowPoisonAreaRenderer::new);
+        event.registerEntityRenderer(EntityInit.ARROW_TRACKING.get(), ArrowTrackingRenderer::new);
     }
 
 }

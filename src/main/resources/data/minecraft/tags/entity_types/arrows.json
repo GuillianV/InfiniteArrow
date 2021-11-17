@@ -3,6 +3,7 @@
   "values": [
     "tutorialmod:arrow_digger",
     "tutorialmod:arrow_tnt",
-    "tutorialmod:arrow_poison_area"
+    "tutorialmod:arrow_poison_area",
+    "tutorialmod:arrow_tracking"
   ]
 }

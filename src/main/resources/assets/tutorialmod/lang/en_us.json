@@ -10,6 +10,9 @@
   "item.tutorialmod.arrow_poison_area_simple": "Simple Poison Arrow",
   "item.tutorialmod.arrow_poison_area_medium": "Medium Poison Arrow",
   "item.tutorialmod.arrow_poison_area_advanced": "Advanced Poison Arrow",
+  "item.tutorialmod.arrow_tracking_simple": "Simple Tracking Arrow",
+  "item.tutorialmod.arrow_tracking_medium": "Medium Tracking Arrow",
+  "item.tutorialmod.arrow_tracking_advanced": "Advanced Tracking Arrow",
 
 
   "block.tutorialmod.myblock": "myblock",
@@ -17,5 +20,6 @@
   "entity.tutorialmod.myentity": "My entity",
   "entity.tutorialmod.arrow_digger": "Digging Arrow",
   "entity.tutorialmod.arrow_tnt": "Tnt Arrow",
-  "entity.tutorialmod.arrow_poison_area": "Poisonous Arrow"
+  "entity.tutorialmod.arrow_poison_area": "Poisonous Arrow",
+  "entity.tutorialmod.arrow_tracking": "Tracking Arrow"
 }

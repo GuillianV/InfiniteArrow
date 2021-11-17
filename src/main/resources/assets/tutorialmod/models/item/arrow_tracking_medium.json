@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "tutorialmod:items/arrows/tracking/arrow_tracking_medium"
+  }
+}

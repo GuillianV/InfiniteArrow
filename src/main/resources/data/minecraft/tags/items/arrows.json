@@ -11,6 +11,10 @@
 
     "tutorialmod:arrow_poison_area_simple",
     "tutorialmod:arrow_poison_area_medium",
-    "tutorialmod:arrow_poison_area_advanced"
+    "tutorialmod:arrow_poison_area_advanced",
+
+    "tutorialmod:arrow_tracking_simple",
+    "tutorialmod:arrow_tracking_medium",
+    "tutorialmod:arrow_tracking_advanced"
   ]
 }

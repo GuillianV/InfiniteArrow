@@ -4,6 +4,7 @@ import net.guillian.tutorialmod.Tutorialmod;
 import net.guillian.tutorialmod.common.items.ArrowItemDigger;
 import net.guillian.tutorialmod.common.items.ArrowItemPoisonArea;
 import net.guillian.tutorialmod.common.items.ArrowItemTnt;
+import net.guillian.tutorialmod.common.items.ArrowItemTracking;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -39,6 +40,9 @@ public final class ItemInit {
     public static  final RegistryObject<Item> ARROW_POISON_AREA_MEDIUM = ITEMS.register("arrow_poison_area_medium",() -> new ArrowItemPoisonArea(new Item.Properties().tab(CreativeModeTab.TAB_MISC),2f,200,3,0,100));
     public static  final RegistryObject<Item> ARROW_POISON_AREA_ADVANCED = ITEMS.register("arrow_poison_area_advanced",() -> new ArrowItemPoisonArea(new Item.Properties().tab(CreativeModeTab.TAB_MISC),3f,300,4,1,150));
 
+    public static  final RegistryObject<Item> ARROW_TRACKING_SIMPLE = ITEMS.register("arrow_tracking_simple",() -> new ArrowItemTracking(new Item.Properties().tab(CreativeModeTab.TAB_MISC),1f));
+    public static  final RegistryObject<Item> ARROW_TRACKING_MEDIUM = ITEMS.register("arrow_tracking_medium",() -> new ArrowItemTracking(new Item.Properties().tab(CreativeModeTab.TAB_MISC),2f));
+    public static  final RegistryObject<Item> ARROW_TRACKING_ADVANCED = ITEMS.register("arrow_tracking_advanced",() -> new ArrowItemTracking(new Item.Properties().tab(CreativeModeTab.TAB_MISC),3f));
 
 
 }
