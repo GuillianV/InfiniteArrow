@@ -35,9 +35,9 @@ public final class ItemInit {
     public static  final RegistryObject<Item> ARROW_TNT_MEDIUM = ITEMS.register("arrow_tnt_medium",() -> new ArrowItemTnt(new Item.Properties().tab(CreativeModeTab.TAB_MISC),1.5f,2, Explosion.BlockInteraction.DESTROY,100));
     public static  final RegistryObject<Item> ARROW_TNT_ADVANCED = ITEMS.register("arrow_tnt_advanced",() -> new ArrowItemTnt(new Item.Properties().tab(CreativeModeTab.TAB_MISC),2.5f,3, Explosion.BlockInteraction.DESTROY,80));
 
-    public static  final RegistryObject<Item> ARROW_POISON_AREA_SIMPLE = ITEMS.register("arrow_poison_area_simple",() -> new ArrowItemPoisonArea(new Item.Properties().tab(CreativeModeTab.TAB_MISC),3));
-    public static  final RegistryObject<Item> ARROW_POISON_AREA_MEDIUM = ITEMS.register("arrow_poison_area_medium",() -> new ArrowItemPoisonArea(new Item.Properties().tab(CreativeModeTab.TAB_MISC),3));
-    public static  final RegistryObject<Item> ARROW_POISON_AREA_ADVANCED = ITEMS.register("arrow_poison_area_advanced",() -> new ArrowItemPoisonArea(new Item.Properties().tab(CreativeModeTab.TAB_MISC),3));
+    public static  final RegistryObject<Item> ARROW_POISON_AREA_SIMPLE = ITEMS.register("arrow_poison_area_simple",() -> new ArrowItemPoisonArea(new Item.Properties().tab(CreativeModeTab.TAB_MISC),1f,100,2,0,50));
+    public static  final RegistryObject<Item> ARROW_POISON_AREA_MEDIUM = ITEMS.register("arrow_poison_area_medium",() -> new ArrowItemPoisonArea(new Item.Properties().tab(CreativeModeTab.TAB_MISC),2f,200,3,0,100));
+    public static  final RegistryObject<Item> ARROW_POISON_AREA_ADVANCED = ITEMS.register("arrow_poison_area_advanced",() -> new ArrowItemPoisonArea(new Item.Properties().tab(CreativeModeTab.TAB_MISC),3f,300,4,1,150));
 
 
 

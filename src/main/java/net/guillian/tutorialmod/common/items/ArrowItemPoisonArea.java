@@ -22,16 +22,22 @@ import java.util.List;
 public class ArrowItemPoisonArea extends ArrowItem {
 
     public final float damage;
+    public final int areaRadius;
+    public final int areaDuration;
+    public final int effectDuration;
+    public final int effectAmplifier;
 
 
 
 
-
-    public ArrowItemPoisonArea(Properties properties, float damage) {
+    public ArrowItemPoisonArea(Properties properties, float damage,int areaDuration, int areaRadius, int effectAmplifier, int effectDuration) {
 
         super(properties);
         this.damage = damage;
-
+        this.areaDuration = areaDuration;
+        this.areaRadius = areaRadius;
+        this.effectAmplifier = effectAmplifier;
+        this.effectDuration = effectDuration;
 
     }
 
@@ -46,7 +52,12 @@ public class ArrowItemPoisonArea extends ArrowItem {
 
         if(Screen.hasShiftDown()){
             components.add(new TextComponent("Damages : " + this.damage).setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)));
-            components.add(new TextComponent("Dig blocks when arrow hit").setStyle(Style.EMPTY.withColor(ChatFormatting.GRAY)) );
+            components.add(new TextComponent("Area Duration : " +(float) this.areaDuration/20f+"s").setStyle(Style.EMPTY.withColor(ChatFormatting.RED)));
+            components.add(new TextComponent("Area Radius : " + this.areaRadius).setStyle(Style.EMPTY.withColor(ChatFormatting.LIGHT_PURPLE)));
+            components.add(new TextComponent("Effect Duration : " +(float) this.effectDuration/20f +"s").setStyle(Style.EMPTY.withColor(ChatFormatting.BLUE)));
+            components.add(new TextComponent("Poison Level on Area : " + (this.effectAmplifier+1)).setStyle(Style.EMPTY.withColor(ChatFormatting.GREEN)));
+            components.add(new TextComponent("Poison Level on Hit : " + (this.effectAmplifier+3)).setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GREEN)));
+            components.add(new TextComponent("Create a poisoneous area when hit , applay poison apgraded when hit entity").setStyle(Style.EMPTY.withColor(ChatFormatting.GRAY)) );
         }
         else {
             components.add(new TextComponent(""));
@@ -65,6 +76,10 @@ public class ArrowItemPoisonArea extends ArrowItem {
     public AbstractArrow createArrow(Level level, ItemStack stack, LivingEntity shooter) {
         ArrowPoisonArea arrow = new ArrowPoisonArea(shooter,level, ItemInit.ARROW_POISON_AREA_SIMPLE.get());
         arrow.setBaseDamage(this.damage);
+        arrow.setAreaRadius(this.areaRadius);
+        arrow.setAreaDuration(this.areaDuration);
+        arrow.setEffectAmplifier(this.effectAmplifier);
+        arrow.setEffectDuration(this.effectDuration);
         return arrow;
     }
 
